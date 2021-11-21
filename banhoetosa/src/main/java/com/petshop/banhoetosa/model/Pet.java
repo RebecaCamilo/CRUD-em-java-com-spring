@@ -12,17 +12,17 @@ public class Pet {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;
-	private int idade;
+	private int age;
 	
 		
 	public Pet() {
 		super();
 	}
 	
-	public Pet(String name, int idade) {
+	public Pet(String name, int age) {
 		super();
 		this.name = name;
-		this.idade = idade;
+		this.age = age;
 	}
 
 	
@@ -38,12 +38,12 @@ public class Pet {
 		this.name = name;
 	}
 
-	public int getIdade() {
-		return idade;
+	public int getAge() {
+		return age;
 	}
 
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setAge(int age) {
+		this.age = age;
 	}
 	
 	

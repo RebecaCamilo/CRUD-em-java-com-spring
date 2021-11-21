@@ -45,3 +45,21 @@ SHORTCUTS
 CTRL+SHIFT+F 	formata o código
 ALT+SHIFT+S	abre caixa de opções para generate
 ALT+SHIFT+S,R	abre getters e setters generate direto
+
+
+
+
+
+--------------------------------------------------------------------------
+METHODS		URLS			ACTIONS
+--------------------------------------------------------------------------
+POST		/api			Registra um novo objeto
+PUT
+GET		/api/list		Busca todos os objetos
+GET		/api/id			Busca o objeto pelo id
+GET		/api/name/partname	Busca objetos por parte do nome
+DELETE		/api/delete		Delete deleta todos os objetos
+DELETE		/api/delete/id		Delete um objeto pelo nome
+--------------------------------------------------------------------------
+
+
