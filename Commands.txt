@@ -1,0 +1,47 @@
+ANOTATIONS
+
+@RestController		anota a classe como classe restcontroler
+@GetMapping		"rastreia" a função para ser usada no main, usa apenas o método get
+@RequestMapping 	pode configurar o tipo de método (get, post,..), mas por padrão aponta para o get
+@PathVariable		passa parâmetros para a URL, torna possível pegar a variável do objeto (normalmente ID) e passar para p endpoit
+@Entity			Define que aquela classe é uma entidade a ser persistida no BD
+@Id			Define o atributo como identificador(id) - toda entidade precisa ter um id
+@GeneratedValue(strategy = GenerationType.IDENTITY)	Estratégia do ID. Define que cada objeto terá seu próprio ID (único), é autoincrement
+@ResponseBody		Deixa claro que o objeto retornado da função faz parte do corpo(body) da resposta
+
+
+@RequestMapping(path="/ola") ou @GetMapping(path={"/ola", "/saudacao"})
+path	usado para setar o endpoint que atenderá aquela função 
+	quando o atributo a ser especificado é apenas o path, o mesmo pode ficar subentendido. Ex. @RequestMapping("/ola") 
+
+
+@RequestMapping(path="/pets")		  //endpoint de acesso a função obterPet():
+public class SegundoPetController {	  //localhost:/pets/qualquer	
+					  //"/pets" -> classe   "/qualquer" -> função
+	@GetMapping(path="/qualquer")
+	public Pet obterPet() {
+		return new Pet(3, "Duque", "123");
+	}
+}
+
+
+DEPENDENCIA MYSQL
+<dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+</dependency>
+
+APLICATION.PROPERTIES
+spring.datasource.url=jdbc:mysql://localhost:3306/nome-do-banco-de-dados-criado-no-mysql
+spring.datasource.username=root
+spring.datasource.password=123
+ 
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+
+
+
+SHORTCUTS
+CTRL+SHIFT+F 	formata o código
+ALT+SHIFT+S	abre caixa de opções para generate
+ALT+SHIFT+S,R	abre getters e setters generate direto
