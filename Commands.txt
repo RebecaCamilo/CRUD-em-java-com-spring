@@ -1,6 +1,19 @@
+
+--------------------------------------------------------------------------
+METHODS		URLS			ACTIONS
+--------------------------------------------------------------------------
+GET		/api/list		Busca todos os objetos
+GET		/api/id			Busca o objeto pelo id
+GET		/api/name/partname	Busca objetos por parte do nome
+POST		/api/register		Registra um novo objeto
+PUT
+DELETE		/api/delete		Delete deleta todos os objetos
+DELETE		/api/delete/id		Delete um objeto pelo nome
+--------------------------------------------------------------------------
+
 ANOTATIONS
 
-@RestController		anota a classe como classe restcontroler
+@RestController		define a classe como classe restcontroler do spring
 @GetMapping		"rastreia" a função para ser usada no main, usa apenas o método get
 @RequestMapping 	pode configurar o tipo de método (get, post,..), mas por padrão aponta para o get
 @PathVariable		passa parâmetros para a URL, torna possível pegar a variável do objeto (normalmente ID) e passar para p endpoit
@@ -48,18 +61,5 @@ ALT+SHIFT+S,R	abre getters e setters generate direto
 
 
 
-
-
---------------------------------------------------------------------------
-METHODS		URLS			ACTIONS
---------------------------------------------------------------------------
-POST		/api			Registra um novo objeto
-PUT
-GET		/api/list		Busca todos os objetos
-GET		/api/id			Busca o objeto pelo id
-GET		/api/name/partname	Busca objetos por parte do nome
-DELETE		/api/delete		Delete deleta todos os objetos
-DELETE		/api/delete/id		Delete um objeto pelo nome
---------------------------------------------------------------------------
 
 

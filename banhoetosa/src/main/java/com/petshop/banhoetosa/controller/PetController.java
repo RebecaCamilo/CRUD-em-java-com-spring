@@ -1,5 +1,7 @@
 package com.petshop.banhoetosa.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,7 @@ public class PetController {
 	
 //	POST
 	
-	@PostMapping	
+	@PostMapping("/register")	
 	public ResponseEntity<Pet> savePet(Pet pet) {
 		try {
 			Pet _pet = petRepository.save(new Pet(pet.getName(), pet.getAge()));
@@ -46,8 +48,7 @@ public class PetController {
 //	public Pet updatePet(@Valid Pet pet) {
 //		petRepository.save(pet);
 //		return pet;
-//	}
-	
+//	}	
 		
 	
 	
@@ -57,6 +58,33 @@ public class PetController {
 	public Iterable<Pet> listPet() {
 		return petRepository.findAll();
 	}
+	
+	
+	/*
+	 
+//	ResponseEntity é uma classe do próprio spring que nos permite manipular os dados HTTP da resposta. 
+	
+	@GetMapping("/list")
+	  public ResponseEntity<List<Pet>> listPets(@RequestParam(required = false) String partname) {
+	    try {
+	      List<Pet> pets = new ArrayList<Pet>();
+
+	      if (partname == null)
+	    	  petRepository.findAll().forEach(pets::add);		//Não entendo esta linha
+	      else
+	    	  petRepository.findByNameContaining(partname).forEach(pets::add);
+
+	      if (pets.isEmpty()) {
+	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	      }
+
+	      return new ResponseEntity<>(pets, HttpStatus.OK);
+	    } catch (Exception e) {
+	      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
+	  }
+	*/
+	
 
 	@GetMapping("/{id}")
 	public Optional<Pet> detailPet(@PathVariable int id) {
